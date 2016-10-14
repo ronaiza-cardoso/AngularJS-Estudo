@@ -32,9 +32,9 @@
       app.controller("listaTelefonicaController", function ($scope) {
           $scope.app = "Lista Telefônica";
           $scope.contatos = [
-              {nome: "Caetano", telefone: 99999999, cor: "green"}
-            , {nome: "Tarcila", telefone: 99999999, cor: "pink"}
-            , {nome: "Balzac", telefone: 99999999, cor: "black"}
+              {nome: "Caetano", telefone: 99999999, data: new Date(), cor: "green"}
+            , {nome: "Tarcila", telefone: 99999999, data: new Date(), cor: "pink"}
+            , {nome: "Balzac", telefone: 99999999, data: new Date(), cor: "black"}
           ];
 
           $scope.operadoras = [
@@ -77,6 +77,7 @@
             <th>Nome</th>
             <th>Telefone</th>
             <th>Operadora</th>
+            <td>Data</td>
             <th></th>
         </tr>
         <tr ng-class="{selecionado: contato.selecionado}" ng-repeat="contato in contatos">
@@ -84,7 +85,7 @@
           <td>{{contato.nome | uppercase}}</td>
           <td>{{contato.telefone | lowercase}}</td>
           <td>{{contato.operadora.nome}}</td>
-          <td><div style="width: 20px; height:20px;" ng-style="{'background-color': contato.cor}"></div></td>
+          <td>{{contato.data}}</td>
         </tr>
       </table>
 

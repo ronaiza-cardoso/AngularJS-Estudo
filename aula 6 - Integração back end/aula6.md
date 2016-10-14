@@ -1,33 +1,24 @@
- #Filtros
- 
-   Filtros nem sempre filtram, eles podem ser definidos como transformadores do resultado de uma expressão fazendo coisas como 
-   realizar operações de formatação de data, conversão de moedas e ordenação de array
-      
-   - uppercase
-            
-          transforma o objeto em uppercase
-    
-   - lowercase
-        
-           
-           transforma o objeto em lowercase
-    
-   - filter
-          
-          filtra um array com base em um critério
-   - orderBy
-          
-          ordena arrays com base em critérios
-          
-   - currency
-            
-           converte números em moedas
-  
-   - number
-        
-            converte números
-   
-   - limitTo
-            
-            limita um Array ou uma String
-            
+#Integração com Back End - Utilizando Ajax
+
+###Ajax
+
+AJAX é acrônimo em língua inglesa de "Asynchronous Javascript and XML", que em português significa 
+"Javascript e XML Assíncronos". Ele não é necessariamente uma tecnologia, na verdade é uma junção de
+tecnologias atuando de forma única reunidas em maneiras novas e poderosas podendo corporar tecnologias 
+como:
+
+    - HTML E CSS;
+    - Exposição dinâmica e interação com o DOM;
+    - Recuperação de dados assíncronos usando XMLHttpRequest;
+    - e JavaScript colocando tudo junto.
+
+### $http
+O serviço $http do Angular permite a realização de requisições utilizando XMLHttpRequest ou via JSONP.]
+Esse serviço nos oferece uma variedade de métodos como:
+
+   - get (url, config)
+   - post (url, config)
+   - put (url, config)
+   - delete (url, config)
+   - head (url, config)
+   - jsonp (url, config)

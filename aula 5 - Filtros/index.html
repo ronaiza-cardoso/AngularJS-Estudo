@@ -83,7 +83,7 @@
             <td>Data</td>
             <th></th>
         </tr>
-        <tr ng-class="{selecionado: contato.selecionado}" ng-repeat="contato in contatos | filter:criterioBusca ">
+        <tr ng-class="{selecionado: contato.selecionado}" ng-repeat="contato in contatos | filter: criterioBusca | orderBy: 'nome' ">
           <td><input type="checkbox" ng-model="contato.selecionado"></td>
           <td>{{contato.nome | uppercase}}</td>
           <td>{{contato.telefone | lowercase}}</td>

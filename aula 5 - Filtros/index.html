@@ -31,10 +31,10 @@
 
     <script>
       var app = angular.module("listaTelefonica", []);
-      app.controller("listaTelefonicaController", function ($scope) {
+      app.controller("listaTelefonicaController", function ($scope, uppercaseFilter) {
           $scope.app = "Lista Telefônica";
           $scope.contatos = [
-              {nome: "Caetano", telefone: "1234-5678", data: new Date(), operadora: {nome: "Oi", codigo: 14, categoria: "Celular"}}
+              {nome: uppercaseFilter("Caetano"), telefone: "1234-5678", data: new Date(), operadora: {nome: "Oi", codigo: 14, categoria: "Celular"}}
             , {nome: "Tarcila", telefone: "9876-1177", data: new Date(), operadora: {nome: "Vivo", codigo: 15, categoria: "Celular"}}
             , {nome: "Balzac", telefone: "0987-2211", data: new Date(), operadora: {nome: "Vivo", codigo: 15, categoria: "Celular"}}
           ];
@@ -92,7 +92,7 @@
         </tr>
         <tr ng-class="{selecionado: contato.selecionado}" ng-repeat="contato in contatos | filter: criterioBusca | orderBy: criterioDeOrdenacao:direcaoDaOrdenacao ">
           <td><input type="checkbox" ng-model="contato.selecionado"></td>
-          <td>{{contato.nome | uppercase}}</td>
+          <td>{{contato.nome}}</td>
           <td>{{contato.telefone | lowercase}}</td>
           <td>{{contato.operadora.nome}}</td>
           <td>{{contato.data | date:'dd/MM/yyyy'}}</td>
@@ -122,7 +122,6 @@
             O campo telefone deve ter o formato NNNN-NNNN
         </div>
 
-        {{100 | number:3 }}
       <button class="btn btn-primary btn-block" ng-disabled="contatoForm.$invalid" ng-click="adicionarContato(contato)">Adicionar Contato</button>
       <button class="btn btn-danger btn-block"  ng-click="apagarContato(contatos)" ng-show="isContatoSelecionado(contatos)">Apagar Contato</button>
     </div>

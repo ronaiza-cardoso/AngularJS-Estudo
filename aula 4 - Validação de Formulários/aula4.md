@@ -16,6 +16,6 @@
       - ``ng-minlength`` e ``ng-maxlength`` define tamanho mínimo e máximo, ele não vai impedir que o usuário digite mais caracteres, apenas irá mostrar uma mensagem 
       - ``$valid `` e ``$invalid`` um valor booleano para o campo
       - ``$error`` consulta os campos de um formulário. É um objeto que contém as validaçoes e seus respectivos estados
-       
+      - ``ng-pattern`` expressão regular para validar o que for preciso de forma personalizada
             
 

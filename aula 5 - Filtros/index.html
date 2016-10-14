@@ -121,6 +121,8 @@
         <div ng-show="contatoForm.telefone.$error.pattern" class="alert alert-danger">
             O campo telefone deve ter o formato NNNN-NNNN
         </div>
+
+        {{100 | number:3 }}
       <button class="btn btn-primary btn-block" ng-disabled="contatoForm.$invalid" ng-click="adicionarContato(contato)">Adicionar Contato</button>
       <button class="btn btn-danger btn-block"  ng-click="apagarContato(contatos)" ng-show="isContatoSelecionado(contatos)">Apagar Contato</button>
     </div>

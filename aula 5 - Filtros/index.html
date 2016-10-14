@@ -69,7 +69,10 @@
   </head>
   <body ng-controller="listaTelefonicaController">
     <div class="jumbotron">
+     <input class="form-control" type="text" ng-model="criterioBusca" placeholder="O que você está buscando?">
+
       <h3 ng-bind="app"></h3>
+
 
       <table ng-show="contatos.length" class="table table-hover">
         <tr>
@@ -80,7 +83,7 @@
             <td>Data</td>
             <th></th>
         </tr>
-        <tr ng-class="{selecionado: contato.selecionado}" ng-repeat="contato in contatos">
+        <tr ng-class="{selecionado: contato.selecionado}" ng-repeat="contato in contatos | filter:criterioBusca ">
           <td><input type="checkbox" ng-model="contato.selecionado"></td>
           <td>{{contato.nome | uppercase}}</td>
           <td>{{contato.telefone | lowercase}}</td>
@@ -88,9 +91,6 @@
           <td>{{contato.data | date:'dd/MM/yyyy'}}</td>
         </tr>
       </table>
-
-        É válido: {{contatoForm.$valid}}<br>
-        É inválido: {{contatoForm.$invalid}}<br>
 
       <form name="contatoForm">
           <input class="form-control" type="text" ng-model="contato.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="10">
